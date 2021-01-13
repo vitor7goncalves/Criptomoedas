@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinMarketCap</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //My api key
+    let apikey = {
+        key: 'c5778245-4601-4422-8871-41b2c9ccec1f'
+    }
+    //Get Fetch Requisition
+    fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/map?CMC_PRO_API_KEY=' + apikey.key)
+    .then((response) => {
+        if(!responde.ok) throw new Error('Erro ao executar a requisição, status' + response.status);
+        return response.json();
+    }) 
+    .then((api) => {
+        console.log(api);
+    })
+    .catch((error) => {
+        console.error(error.menssage);
+    });
+
+    </script>
+</body>
+</html>
